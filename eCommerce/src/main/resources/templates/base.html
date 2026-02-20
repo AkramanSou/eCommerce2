@@ -1,0 +1,135 @@
+<!--<!doctype html>-->
+<!--<html lang="fr" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>E-komerce</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="min-vh-100">-->
+<!--    <header th:replace="fragments :: header"></header>-->
+<!--    <main>-->
+<!--        <div class="container" th:replace="::content">-->
+
+
+<!--        </div>-->
+<!--    </main>-->
+<!--</div>-->
+<!--<div th:replace="fragments :: footer"></div>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${pageTitle != null ? pageTitle + ' | E-Kommerce' : 'E-Kommerce | Équipements de Boxe'}">E-Kommerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">E-<span>Kommerce</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto gap-1">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activePage == 'accueil'} ? 'active'" th:href="@{/}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activePage == 'boutique'} ? 'active'" th:href="@{/boutique}">Boutique</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" th:classappend="${activePage == 'categories'} ? 'active'"
+                       href="#" role="button" data-bs-toggle="dropdown">Catégories</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/categories/gants}">🥊 Gants</a></li>
+                        <li><a class="dropdown-item" th:href="@{/categories/vetements}">🎽 Vêtements</a></li>
+                        <li><a class="dropdown-item" th:href="@{/categories/protections}">🛡️ Protections</a></li>
+                        <li><a class="dropdown-item" th:href="@{/categories/accessoires}">⚙️ Accessoires</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activePage == 'promotions'} ? 'active'" th:href="@{/promotions}">Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activePage == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <a th:href="@{/panier}" class="text-white text-decoration-none position-relative">
+                    <i class="bi bi-bag fs-5"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a th:href="@{/connexion}" class="btn-rouge" style="padding:8px 18px;font-size:0.8rem;">Connexion</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENU DE LA PAGE -->
+<div th:replace="~{::content}"></div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row g-4 mb-2">
+            <div class="col-md-4">
+                <span class="footer-brand">E-<span>Kommerce</span></span>
+                <p style="font-size:0.88rem;line-height:1.7;max-width:280px;">
+                    Tout l'équipement pour votre pratique de la boxe, du débutant au professionnel.
+                </p>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6>Boutique</h6>
+                <a th:href="@{/categories/gants}">Gants</a>
+                <a th:href="@{/categories/vetements}">Vêtements</a>
+                <a th:href="@{/categories/protections}">Protections</a>
+                <a th:href="@{/categories/accessoires}">Accessoires</a>
+                <a th:href="@{/promotions}">Promotions</a>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6>Mon compte</h6>
+                <a th:href="@{/connexion}">Connexion</a>
+                <a th:href="@{/inscription}">Inscription</a>
+                <a th:href="@{/panier}">Mon panier</a>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6>Aide</h6>
+                <a href="#">FAQ</a>
+                <a href="#">Livraison</a>
+                <a href="#">Retours</a>
+                <a th:href="@{/contact}">Contact</a>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6>Légal</h6>
+                <a href="#">CGV</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+        <hr class="footer-divider"/>
+        <p class="text-center mb-0" style="font-size:0.78rem;">© 2025 E-Kommerce. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

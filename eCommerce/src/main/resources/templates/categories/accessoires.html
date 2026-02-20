@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html th:replace="~{base}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/boutique}">Boutique</a></li>
+          <li class="breadcrumb-item active">Accessoires</li>
+        </ol>
+      </nav>
+      <h1>⚙️ Accessoires</h1>
+      <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Sacs, cordes, bandages — tout l'essentiel</p>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container">
+
+      <div class="d-flex gap-2 flex-wrap mb-4">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Cordes</button>
+        <button class="filter-btn">Bandages</button>
+        <button class="filter-btn">Sacs de sport</button>
+        <button class="filter-btn">Sacs de frappe</button>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🪢</div>
+            <div class="product-body">
+              <div class="product-name">Corde à Sauter Pro</div>
+              <div class="product-sub">Acier câblé · Réglable</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">19,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🩹</div>
+            <div class="product-body">
+              <div class="product-name">Bandages de Boxe</div>
+              <div class="product-sub">4,5 m · Lot de 2</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">12,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">💪<span class="badge-promo">-20%</span></div>
+            <div class="product-body">
+              <div class="product-name">Sac de Frappe 30 kg</div>
+              <div class="product-sub">Rembourrage dense · Chaîne incluse</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">119,99 €</span><span class="price-old">149,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🎒</div>
+            <div class="product-body">
+              <div class="product-name">Sac de Sport Boxe</div>
+              <div class="product-sub">60 L · Compartiment chaussures</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">54,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊</div>
+            <div class="product-body">
+              <div class="product-name">Patte d'Ours</div>
+              <div class="product-sub">Mousse HD · Paire</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">44,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">💪<span class="badge-new">NOUVEAU</span></div>
+            <div class="product-body">
+              <div class="product-name">Sac de Frappe Mural</div>
+              <div class="product-sub">15 kg · Fixation murale incluse</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">79,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+</html>

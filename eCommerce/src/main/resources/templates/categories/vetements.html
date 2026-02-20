@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html th:replace="~{base}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/boutique}">Boutique</a></li>
+          <li class="breadcrumb-item active">Vêtements</li>
+        </ol>
+      </nav>
+      <h1>🎽 Vêtements</h1>
+      <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Shorts, t-shirts, hoodies — performants et stylés</p>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container">
+
+      <div class="d-flex gap-2 flex-wrap mb-4">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Shorts</button>
+        <button class="filter-btn">T-shirts</button>
+        <button class="filter-btn">Hoodies</button>
+        <button class="filter-btn">Rash Guards</button>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🩱</div>
+            <div class="product-body">
+              <div class="product-name">Short de Boxe Pro</div>
+              <div class="product-sub">Satin · S / M / L / XL</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">34,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">👕</div>
+            <div class="product-body">
+              <div class="product-name">T-shirt Combat</div>
+              <div class="product-sub">100% coton · Noir / Rouge</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">24,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🧥<span class="badge-new">NOUVEAU</span></div>
+            <div class="product-body">
+              <div class="product-name">Hoodie Fighter</div>
+              <div class="product-sub">Molletonné · S / M / L / XXL</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">49,99 €</span><span class="price-old">64,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🩳</div>
+            <div class="product-body">
+              <div class="product-name">Short MMA Rash Guard</div>
+              <div class="product-sub">Polyester stretch · M / L / XL</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">39,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">👕</div>
+            <div class="product-body">
+              <div class="product-name">Rash Guard Compression</div>
+              <div class="product-sub">Manches longues · Anti-transpiration</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">44,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🩱<span class="badge-promo">-10%</span></div>
+            <div class="product-body">
+              <div class="product-name">Short Muay Thai</div>
+              <div class="product-sub">Satin brodé · S / M / L / XL</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">31,99 €</span><span class="price-old">35,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+</html>

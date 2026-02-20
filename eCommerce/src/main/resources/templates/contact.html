@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: html}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+    <div class="page-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
+                    <li class="breadcrumb-item active">Contact</li>
+                </ol>
+            </nav>
+            <h1>Contact</h1>
+            <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Une question ? On vous répond sous 24h</p>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Formulaire -->
+                <div class="col-lg-7">
+                    <h2 class="section-title mb-4">Envoyez-nous un message</h2>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold" style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Prénom</label>
+                                <input type="text" class="form-control" placeholder="Jean" style="border-radius:2px;border:1px solid var(--gris-moyen);padding:12px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold" style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Nom</label>
+                                <input type="text" class="form-control" placeholder="Dupont" style="border-radius:2px;border:1px solid var(--gris-moyen);padding:12px 14px;">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold" style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Email</label>
+                                <input type="email" class="form-control" placeholder="jean@exemple.fr" style="border-radius:2px;border:1px solid var(--gris-moyen);padding:12px 14px;">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold" style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Sujet</label>
+                                <select class="form-select" style="border-radius:2px;border:1px solid var(--gris-moyen);padding:12px 14px;">
+                                    <option>Question sur une commande</option>
+                                    <option>Information sur un produit</option>
+                                    <option>Retour / remboursement</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold" style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Message</label>
+                                <textarea class="form-control" rows="5" placeholder="Votre message..." style="border-radius:2px;border:1px solid var(--gris-moyen);padding:12px 14px;"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-rouge">Envoyer le message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Infos contact -->
+                <div class="col-lg-5">
+                    <h2 class="section-title mb-4">Nos coordonnées</h2>
+
+                    <div class="d-flex gap-3 mb-4 align-items-start">
+                        <i class="bi bi-geo-alt fs-4" style="color:var(--rouge);flex-shrink:0;"></i>
+                        <div>
+                            <div class="fw-bold mb-1">Adresse</div>
+                            <div class="text-muted" style="font-size:0.9rem;">12 Rue du Champion<br>75011 Paris, France</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-4 align-items-start">
+                        <i class="bi bi-envelope fs-4" style="color:var(--rouge);flex-shrink:0;"></i>
+                        <div>
+                            <div class="fw-bold mb-1">Email</div>
+                            <div class="text-muted" style="font-size:0.9rem;">contact@ekommerce.fr</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-4 align-items-start">
+                        <i class="bi bi-telephone fs-4" style="color:var(--rouge);flex-shrink:0;"></i>
+                        <div>
+                            <div class="fw-bold mb-1">Téléphone</div>
+                            <div class="text-muted" style="font-size:0.9rem;">01 23 45 67 89<br>Lun–Ven 9h–18h</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-4 align-items-start">
+                        <i class="bi bi-clock fs-4" style="color:var(--rouge);flex-shrink:0;"></i>
+                        <div>
+                            <div class="fw-bold mb-1">Horaires du support</div>
+                            <div class="text-muted" style="font-size:0.9rem;">7 jours / 7<br>9h – 20h</div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ rapide -->
+                    <div class="mt-4 p-4" style="background:var(--gris);border-radius:4px;">
+                        <h6 class="fw-bold mb-3" style="text-transform:uppercase;letter-spacing:1px;font-size:0.85rem;">Questions fréquentes</h6>
+                        <div class="mb-2" style="font-size:0.85rem;"><strong>Délai de livraison ?</strong><br><span class="text-muted">2 à 4 jours ouvrés</span></div>
+                        <div class="mb-2" style="font-size:0.85rem;"><strong>Retour possible ?</strong><br><span class="text-muted">Oui, sous 30 jours</span></div>
+                        <div style="font-size:0.85rem;"><strong>Livraison internationale ?</strong><br><span class="text-muted">Oui, UE et Suisse</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+</html>

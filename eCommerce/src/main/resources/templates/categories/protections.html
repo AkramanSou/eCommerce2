@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html th:replace="~{base}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/boutique}">Boutique</a></li>
+          <li class="breadcrumb-item active">Protections</li>
+        </ol>
+      </nav>
+      <h1>🛡️ Protections</h1>
+      <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Entraînez-vous en toute sécurité</p>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container">
+
+      <div class="d-flex gap-2 flex-wrap mb-4">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Casques</button>
+        <button class="filter-btn">Protège-dents</button>
+        <button class="filter-btn">Coquilles</button>
+        <button class="filter-btn">Protège-tibias</button>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🛡️</div>
+            <div class="product-body">
+              <div class="product-name">Casque Sparring Full</div>
+              <div class="product-sub">Joues amovibles · S / M / L</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">59,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">😬</div>
+            <div class="product-body">
+              <div class="product-name">Protège-dents Pro</div>
+              <div class="product-sub">Thermoformable · Boîte incluse</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">14,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🛡️<span class="badge-new">NOUVEAU</span></div>
+            <div class="product-body">
+              <div class="product-name">Casque Grille Intégrale</div>
+              <div class="product-sub">Grille acier · Protection maximale</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">89,99 €</span><span class="price-old">109,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🦺</div>
+            <div class="product-body">
+              <div class="product-name">Coquille de Protection</div>
+              <div class="product-sub">Coque rigide · S / M / L / XL</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">19,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🦵</div>
+            <div class="product-body">
+              <div class="product-name">Protège-tibias Kick</div>
+              <div class="product-sub">Mousse HD · S / M / L</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">29,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🛡️</div>
+            <div class="product-body">
+              <div class="product-name">Plastron d'Entraînement</div>
+              <div class="product-sub">Pour entraîneur · Taille réglable</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">74,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+</html>

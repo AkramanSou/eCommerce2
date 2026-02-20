@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: html}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+    <section class="py-5" style="background:var(--gris);min-height:70vh;display:flex;align-items:center;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="row g-0 shadow" style="border-radius:6px;overflow:hidden;">
+
+                        <!-- Panneau gauche décoratif -->
+                        <div class="col-md-5 d-none d-md-flex flex-column justify-content-center align-items-center p-5"
+                             style="background:linear-gradient(135deg, var(--noir) 0%, #2a0a0a 100%);color:white;">
+                            <span style="font-size:4rem;display:block;margin-bottom:16px;">🥊</span>
+                            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;text-align:center;line-height:1.2;">
+                                Prêt à<br>l'<span style="color:var(--rouge);">action</span> ?
+                            </div>
+                            <p style="font-size:0.85rem;opacity:0.6;text-align:center;margin-top:12px;">
+                                Connectez-vous pour accéder à votre espace et suivre vos commandes.
+                            </p>
+                        </div>
+
+                        <!-- Formulaire -->
+                        <div class="col-md-7 bg-white p-5">
+                            <h2 class="fw-bold mb-1" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;">Connexion</h2>
+                            <p class="text-muted mb-4" style="font-size:0.9rem;">Pas encore de compte ? <a th:href="@{/inscription}" style="color:var(--rouge);font-weight:600;">S'inscrire</a></p>
+
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold" style="font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Email</label>
+                                    <input type="email" class="form-control" placeholder="jean@exemple.fr" style="border-radius:2px;padding:12px 14px;">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold" style="font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;">Mot de passe</label>
+                                    <input type="password" class="form-control" placeholder="••••••••" style="border-radius:2px;padding:12px 14px;">
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="remember">
+                                        <label class="form-check-label" for="remember" style="font-size:0.85rem;">Se souvenir de moi</label>
+                                    </div>
+                                    <a href="#" style="font-size:0.85rem;color:var(--rouge);text-decoration:none;">Mot de passe oublié ?</a>
+                                </div>
+                                <button type="submit" class="btn-rouge d-block w-100 text-center">Se connecter</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</html>

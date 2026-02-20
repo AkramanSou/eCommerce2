@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html th:replace="~{base}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/boutique}">Boutique</a></li>
+          <li class="breadcrumb-item active">Gants</li>
+        </ol>
+      </nav>
+      <h1>🥊 Gants</h1>
+      <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Boxe anglaise, MMA, sparring — trouvez votre paire idéale</p>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Filtres -->
+      <div class="d-flex gap-2 flex-wrap mb-4">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Boxe anglaise</button>
+        <button class="filter-btn">MMA</button>
+        <button class="filter-btn">Sparring</button>
+        <button class="filter-btn">Sac</button>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊<span class="badge-new">NOUVEAU</span></div>
+            <div class="product-body">
+              <div class="product-name">Gants Pro Combat</div>
+              <div class="product-sub">Cuir véritable · 10 / 12 / 14 oz</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">79,99 €</span><span class="price-old">99,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊</div>
+            <div class="product-body">
+              <div class="product-name">Gants Entraînement</div>
+              <div class="product-sub">Synthétique · 10 / 12 oz</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">44,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥋</div>
+            <div class="product-body">
+              <div class="product-name">Gants MMA Open</div>
+              <div class="product-sub">Semi-ouvert · S / M / L</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">39,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊<span class="badge-promo">-15%</span></div>
+            <div class="product-body">
+              <div class="product-name">Gants Sparring Elite</div>
+              <div class="product-sub">16 oz · Cuir pleine fleur</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <div><span class="price">109,99 €</span><span class="price-old">129,99 €</span></div>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊</div>
+            <div class="product-body">
+              <div class="product-name">Gants Sac Junior</div>
+              <div class="product-sub">Pour enfants · 6 / 8 oz</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">29,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img">🥊</div>
+            <div class="product-body">
+              <div class="product-name">Mitaines Focus</div>
+              <div class="product-sub">Pour entraîneur · Taille unique</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">34,99 €</span>
+                <button class="btn-cart"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+</html>
