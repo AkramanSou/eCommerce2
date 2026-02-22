@@ -10,11 +10,13 @@ group = "org.example"
 version = "0.0.1-SNAPSHOT"
 description = "eCommerce"
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
+
+//j'ai mis ca en commentaire pour travailler de chez moi
+//java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(25)
+//    }
+//}
 
 repositories {
     mavenCentral()
