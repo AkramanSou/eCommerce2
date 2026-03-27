@@ -12,11 +12,11 @@ description = "eCommerce"
 
 
 //j'ai mis ca en commentaire pour travailler de chez moi
-//java {
-//    toolchain {
-//        languageVersion = JavaLanguageVersion.of(25)
-//    }
-//}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenCentral()
