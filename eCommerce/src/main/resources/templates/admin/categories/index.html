@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: html}" lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+    <div class="page-hero">
+        <div class="container">
+            <h1>⚙️ Admin - Catégories</h1>
+            <p style="color:rgba(255,255,255,0.6);margin-top:6px;">Gérer les catégories</p>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title">Catégories</h2>
+                <a th:href="@{/admin/categories/create}" class="btn-rouge">+ Nouvelle catégorie</a>
+            </div>
+
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Icône</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="categorie : ${categories}">
+                    <td th:text="${categorie.id}">1</td>
+                    <td th:text="${categorie.icone}">🥊</td>
+                    <td th:text="${categorie.nom}">Nom</td>
+                    <td th:text="${categorie.description}">Description</td>
+                    <td>
+                        <a th:href="@{/admin/categories/edit/{id}(id=${categorie.id})}"
+                           class="btn btn-sm btn-warning me-2">Modifier</a>
+                        <form th:action="@{/admin/categories/delete/{id}(id=${categorie.id})}"
+                              method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Supprimer cette catégorie ?')">
+                                Supprimer
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</html>

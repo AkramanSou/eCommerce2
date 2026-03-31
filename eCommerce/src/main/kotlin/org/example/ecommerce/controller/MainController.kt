@@ -20,17 +20,24 @@
 
 package org.example.ecommerce.controller
 
+import org.example.ecommerce.repository.ArticleRepository
+import org.example.ecommerce.repository.CategorieRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class MainController {
+class MainController(
+    val categorieRepository: CategorieRepository,
+    val articleRepository: ArticleRepository
+) {
 
     @GetMapping("/")
     fun home(model: Model): String {
         model.addAttribute("activePage", "accueil")
         model.addAttribute("pageTitle", "Accueil")
+        model.addAttribute("categories", categorieRepository.findAll())
+        model.addAttribute("articles", articleRepository.findAll())
         return "index"
     }
 
@@ -38,6 +45,7 @@ class MainController {
     fun boutique(model: Model): String {
         model.addAttribute("activePage", "boutique")
         model.addAttribute("pageTitle", "Boutique")
+        model.addAttribute("articles", articleRepository.findAll())
         return "boutique"
     }
 
@@ -45,6 +53,7 @@ class MainController {
     fun promotions(model: Model): String {
         model.addAttribute("activePage", "promotions")
         model.addAttribute("pageTitle", "Promotions")
+        model.addAttribute("articles", articleRepository.findAll())
         return "promotions"
     }
 
@@ -73,12 +82,12 @@ class MainController {
         return "inscription"
     }
 
-    // ── Catégories ──
-
     @GetMapping("/categories/gants")
     fun gants(model: Model): String {
         model.addAttribute("activePage", "categories")
         model.addAttribute("pageTitle", "Gants de Boxe")
+        val categorie = categorieRepository.findAll().find { it.nom == "Gants" }
+        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
         return "categories/gants"
     }
 
@@ -86,6 +95,8 @@ class MainController {
     fun vetements(model: Model): String {
         model.addAttribute("activePage", "categories")
         model.addAttribute("pageTitle", "Vêtements")
+        val categorie = categorieRepository.findAll().find { it.nom == "Vêtements" }
+        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
         return "categories/vetements"
     }
 
@@ -93,6 +104,8 @@ class MainController {
     fun protections(model: Model): String {
         model.addAttribute("activePage", "categories")
         model.addAttribute("pageTitle", "Protections")
+        val categorie = categorieRepository.findAll().find { it.nom == "Protections" }
+        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
         return "categories/protections"
     }
 
@@ -100,6 +113,8 @@ class MainController {
     fun accessoires(model: Model): String {
         model.addAttribute("activePage", "categories")
         model.addAttribute("pageTitle", "Accessoires")
+        val categorie = categorieRepository.findAll().find { it.nom == "Accessoires" }
+        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
         return "categories/accessoires"
     }
 }
