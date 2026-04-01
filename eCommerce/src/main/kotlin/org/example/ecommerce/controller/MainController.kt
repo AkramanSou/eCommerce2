@@ -1,36 +1,24 @@
-//package org.example.ecommerce.controller
-//
-//import org.springframework.stereotype.Controller
-//import org.springframework.web.bind.annotation.GetMapping
-//
-//@Controller
-//class MainController (){
-//
-//    /**
-//     * Méthode permettant d'afficher la page d'accueil de l'application.
-//     * @return le chemin vers le template a partir du dossier ressources/templates (on ne marque pas le .html)
-//     */
-//    @GetMapping("/ecommerce")
-//    fun home():String{
-//        return "index"
-//    }
-//
-//
-//}
-
 package org.example.ecommerce.controller
 
+import org.example.ecommerce.model.Categorie
 import org.example.ecommerce.repository.ArticleRepository
 import org.example.ecommerce.repository.CategorieRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.ModelAttribute
+import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class MainController(
     val categorieRepository: CategorieRepository,
     val articleRepository: ArticleRepository
 ) {
+
+    @ModelAttribute("toutesLesCategories")
+    fun toutesLesCategories(): List<Categorie> {
+        return categorieRepository.findAll()
+    }
 
     @GetMapping("/")
     fun home(model: Model): String {
@@ -82,39 +70,13 @@ class MainController(
         return "inscription"
     }
 
-    @GetMapping("/categories/gants")
-    fun gants(model: Model): String {
+    @GetMapping("/categories/{id}")
+    fun categorie(@PathVariable id: Long, model: Model): String {
+        val categorie = categorieRepository.findById(id).orElseThrow()
+        model.addAttribute("categorie", categorie)
+        model.addAttribute("articles", categorie.articles)
         model.addAttribute("activePage", "categories")
-        model.addAttribute("pageTitle", "Gants de Boxe")
-        val categorie = categorieRepository.findAll().find { it.nom == "Gants" }
-        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
-        return "categories/gants"
-    }
-
-    @GetMapping("/categories/vetements")
-    fun vetements(model: Model): String {
-        model.addAttribute("activePage", "categories")
-        model.addAttribute("pageTitle", "Vêtements")
-        val categorie = categorieRepository.findAll().find { it.nom == "Vêtements" }
-        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
-        return "categories/vetements"
-    }
-
-    @GetMapping("/categories/protections")
-    fun protections(model: Model): String {
-        model.addAttribute("activePage", "categories")
-        model.addAttribute("pageTitle", "Protections")
-        val categorie = categorieRepository.findAll().find { it.nom == "Protections" }
-        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
-        return "categories/protections"
-    }
-
-    @GetMapping("/categories/accessoires")
-    fun accessoires(model: Model): String {
-        model.addAttribute("activePage", "categories")
-        model.addAttribute("pageTitle", "Accessoires")
-        val categorie = categorieRepository.findAll().find { it.nom == "Accessoires" }
-        model.addAttribute("articles", categorie?.articles ?: emptyList<Any>())
-        return "categories/accessoires"
+        model.addAttribute("pageTitle", categorie.nom)
+        return "categories/categorie"
     }
 }

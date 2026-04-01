@@ -3,34 +3,35 @@
 
 <div th:fragment="content">
 
-    <!-- Page Hero -->
     <div class="page-hero">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a th:href="@{/}">Accueil</a></li>
-                    <li class="breadcrumb-item active">Boutique</li>
+                    <li class="breadcrumb-item"><a th:href="@{/boutique}">Boutique</a></li>
+                    <li class="breadcrumb-item active" th:text="${categorie.nom}">Catégorie</li>
                 </ol>
             </nav>
-            <h1>Boutique</h1>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;margin-top:6px;">Tous nos équipements de boxe</p>
+            <h1>
+                <span th:text="${categorie.icone}">🥊</span>
+                <span th:text="${categorie.nom}">Catégorie</span>
+            </h1>
+            <p style="color:rgba(255,255,255,0.6);margin-top:6px;" th:text="${categorie.description}">Description</p>
         </div>
     </div>
 
     <section class="py-5">
         <div class="container">
 
-            <!-- Filtres par catégorie -->
-            <div class="d-flex gap-2 flex-wrap mb-4">
-                <a th:href="@{/boutique}" class="filter-btn active">Tous</a>
-                <a th:each="cat : ${toutesLesCategories}"
-                   th:href="@{/categories/{id}(id=${cat.id})}"
-                   th:text="${cat.icone + ' ' + cat.nom}"
-                   class="filter-btn">Catégorie</a>
+            <!-- Si aucun article -->
+            <div th:if="${#lists.isEmpty(articles)}" class="text-center py-5">
+                <div style="font-size:4rem;">📦</div>
+                <h4 class="mt-3">Aucun article dans cette catégorie</h4>
+                <a th:href="@{/boutique}" class="btn-rouge mt-3 d-inline-block">Voir la boutique</a>
             </div>
 
             <!-- Liste des articles -->
-            <div class="row g-4">
+            <div class="row g-4" th:unless="${#lists.isEmpty(articles)}">
                 <div class="col-6 col-md-4 col-lg-3" th:each="article : ${articles}">
                     <div class="product-card">
                         <div class="product-img">

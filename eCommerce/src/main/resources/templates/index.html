@@ -45,46 +45,21 @@
     </div>
 </section>
 
-<!-- ══════════ CATÉGORIES ══════════ -->
-<section class="py-5" style="background:var(--gris);">
-    <div class="container">
-        <h2 class="section-title mb-4">Catégories</h2>
-        <div class="row g-3">
-            <div class="col-6 col-md-3">
-                <a href="/categories/gants" class="category-card text-center p-3">
-<!--                <a href="#" class="category-card text-center p-3">-->
-                    <div class="category-icon">🥊</div>
-                    <h5>Gants</h5>
-                    <p>Boxe, MMA, sparring</p>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="/categories/vetements" class="category-card text-center p-3">
-<!--                <a href="#" class="category-card text-center p-3">-->
-                    <div class="category-icon">🎽</div>
-                    <h5>Vêtements</h5>
-                    <p>Shorts, t-shirts, hoodies</p>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="/categories/protections" class="category-card text-center p-3">
-<!--                <a href="#" class="category-card text-center p-3">-->
-                    <div class="category-icon">🛡️</div>
-                    <h5>Protections</h5>
-                    <p>Casques, coquilles, protège-dents</p>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="/categories/accessoires" class="category-card text-center p-3">
-<!--                <a href="#" class="category-card text-center p-3">-->
-                    <div class="category-icon">⚙️</div>
-                    <h5>Accessoires</h5>
-                    <p>Sacs, cordes, bandages</p>
-                </a>
+    <!-- ══════════ CATÉGORIES ══════════ -->
+    <section class="py-5" style="background:var(--gris);">
+        <div class="container">
+            <h2 class="section-title mb-4">Catégories</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3" th:each="cat : ${toutesLesCategories}">
+                    <a th:href="@{/categories/{id}(id=${cat.id})}" class="category-card text-center p-3">
+                        <div class="category-icon" th:text="${cat.icone}">🥊</div>
+                        <h5 th:text="${cat.nom}">Catégorie</h5>
+                        <p th:text="${cat.description}">Description</p>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!-- ══════════ PRODUITS VEDETTES ══════════ -->
 <!--<section class="py-5">-->
